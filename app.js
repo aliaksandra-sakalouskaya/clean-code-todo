@@ -13,7 +13,7 @@ const incompleteTaskHolder = document.getElementById('incompleteTasks') //ul of 
 const completedTasksHolder = document.getElementById('completed-tasks') //completed-tasks
 
 //New task list item
-const createNewTaskElement = function (taskString) {
+function createNewTaskElement(taskString) {
   const listItem = document.createElement('li')
 
   //input (checkbox)
@@ -53,7 +53,7 @@ const createNewTaskElement = function (taskString) {
   return listItem
 }
 
-const addTask = function () {
+function addTask() {
   //Create a new list item with the text from the #new-task:
   if (!taskInput.value) return
   const listItem = createNewTaskElement(taskInput.value)
@@ -67,7 +67,7 @@ const addTask = function () {
 
 //Edit an existing task.
 
-const editTask = function () {
+function editTask() {
   const listItem = this.parentNode
 
   const editInput = listItem.querySelector('input[type=text]')
@@ -90,7 +90,7 @@ const editTask = function () {
 }
 
 //Delete task.
-const deleteTask = function () {
+function deleteTask() {
   const listItem = this.parentNode
   const ul = listItem.parentNode
   //Remove the parent list item from the ul.
@@ -114,7 +114,7 @@ function taskIncomplete() {
   bindTaskEvents(listItem, taskCompleted)
 }
 
-const ajaxRequest = function () {}
+function ajaxRequest() {}
 
 //The glue to hold it all together.
 
